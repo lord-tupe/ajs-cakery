@@ -1,0 +1,8 @@
+{
+  "name": "Red Velvet",
+  "category": "premium",
+  "price": 5000,
+  "description": "Classic red velvet with cream cheese frosting & crumbs.",
+  "image": "/assets/images/product-redvelvet.jpg",
+  "badge": "Best Seller"
+}

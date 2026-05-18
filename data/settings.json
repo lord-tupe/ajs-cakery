@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "line1": "fluffy",
+    "line2": "cupcakes",
+    "badge": "Freshly baked every morning",
+    "description": "Handcrafted with love in Blantyre using the finest organic ingredients. Each cupcake is a little masterpiece of joy, baked fresh daily for your delight.",
+    "stat1_num": "50+",
+    "stat1_label": "Unique Flavors",
+    "stat2_num": "10K+",
+    "stat2_label": "Happy Customers",
+    "stat3_num": "4.9",
+    "stat3_label": "Average Rating"
+  },
+  "about": {
+    "title": "Baking Happiness Since 2009",
+    "text1": "What started as a small kitchen experiment in Blantyre has blossomed into a beloved cakery. We believe that every cake and cupcake should be a little moment of joy – baked with the finest organic ingredients, crafted by hand, and decorated with love.",
+    "text2": "Our recipes have been perfected over 15 years, combining traditional techniques with creative modern flavours. From classic vanilla to exotic matcha, there’s a treat for every occasion.",
+    "years_experience": "15"
+  },
+  "offer": {
+    "discount": "20% Off",
+    "title": "Summer Cupcake Special",
+    "description": "Get 20% off our entire seasonal collection! Use code SWEET20 at checkout. Limited time offer — don't miss out on these delicious flavours.",
+    "code": "SWEET20"
+  },
+  "newsletter": {
+    "title": "Join Our Sweet Community",
+    "subtitle": "Subscribe to get exclusive offers, new flavour announcements, and baking tips delivered to your inbox."
+  }
+}
