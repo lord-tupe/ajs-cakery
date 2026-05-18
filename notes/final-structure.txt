@@ -1,0 +1,29 @@
+ajscakery-site/
+├── index.html              # Main website
+├── style.css               # All styling
+├── main.js                 # All JavaScript (cart, filters, countdown, etc.)
+├── assets/
+│   └── images/             # All site images
+│       ├── hero-cupcake.jpg
+│       ├── product-strawberry.jpg
+│       ├── product-redvelvet.jpg
+│       ├── product-blueberry.jpg
+│       ├── product-matcha.jpg
+│       ├── about-kitchen.jpg
+│       ├── about-decorating.jpg
+│       ├── offer-assortment.jpg
+│       └── fallback.jpg
+├── data/                   # CMS-managed content (JSON files)
+│   ├── settings.json       # Hero, about, offer, newsletter text
+│   ├── products/           # One file per cupcake
+│   │   ├── strawberry-dream.json
+│   │   ├── red-velvet.json
+│   │   ├── blueberry-vanilla.json
+│   │   └── matcha-blossom.json
+│   └── testimonials/       # One file per review
+│       ├── sarah-mitchell.json
+│       ├── james-rodriguez.json
+│       └── emily-chen.json
+└── admin/                  # Decap CMS backend
+    ├── index.html          # Loads the CMS dashboard
+    └── config.yml          # CMS configuration (collections, backend)

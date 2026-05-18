@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJs Cakery, Handcrafted Cakes and Cupcakes</title>
+    <meta name="description" content="AJs Cakery – handcrafted cakes and cupcakes baked fresh daily in Blantyre. Joy in every bite.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
+    <link rel="alternate icon" href="data:image/png;base64,iVBORw0KGgo=">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Preload hero image -->
+    <link rel="preload" as="image" href="/assets/images/hero-cupcake.jpg">
+</head>
+<body>
+
+    <!-- ==========================================
+    NAVIGATION
+    ========================================== -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav__inner">
+                <a href="#home" class="nav__logo">
+                    <div class="nav__logo-icon">🎂</div>
+                    AJs Cakery
+                </a>
+                <div class="nav__links">
+                    <a href="#home" class="nav__link active">Home</a>
+                    <a href="#products" class="nav__link">Menu</a>
+                    <a href="#about" class="nav__link">Our Story</a>
+                    <a href="#testimonials" class="nav__link">Reviews</a>
+                    <a href="#contact" class="nav__link">Contact</a>
+                </div>
+                <div class="nav__actions">
+                    <button class="nav__cart" id="cartToggle" aria-label="Shopping cart">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <span class="nav__badge" id="cartBadge">0</span>
+                    </button>
+                    <a href="#products" class="btn btn-primary btn-sm">Order Now</a>
+                    <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" class="nav__link" data-mobile-link>Home</a>
+        <a href="#products" class="nav__link" data-mobile-link>Menu</a>
+        <a href="#about" class="nav__link" data-mobile-link>Our Story</a>
+        <a href="#testimonials" class="nav__link" data-mobile-link>Reviews</a>
+        <a href="#contact" class="nav__link" data-mobile-link>Contact</a>
+        <a href="#products" class="btn btn-primary btn-lg" data-mobile-link>Order Now</a>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-drawer">
+            <div class="cart-drawer__header">
+                <h3 class="cart-drawer__title">Your Treats 🍰</h3>
+                <button class="cart-drawer__close" id="cartClose">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <div class="cart-drawer__body" id="cartBody">
+                <div class="cart-drawer__empty">Your cart is empty. Time for a treat! 🧁</div>
+            </div>
+            <div class="cart-drawer__footer">
+                <div class="cart-drawer__total">
+                    <span>Total</span>
+                    <span id="cartTotal">MK 0.00</span>
+                </div>
+                <button class="btn btn-primary btn-full">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+    HERO SECTION
+    ========================================== -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero__inner">
+                <div class="hero__content fade-in">
+                    <div class="hero__badge">
+                        <span class="hero__badge-dot"></span>
+                        Freshly baked every morning
+                    </div>
+                    <h1 class="hero__title">
+                        Life is <i>Sweet</i> with<br>Our Cupcakes
+                    </h1>
+                    <p class="hero__desc">
+                        Handcrafted with love using the finest organic ingredients. Each cupcake is a little masterpiece of joy, baked fresh daily in our Blantyre kitchen for your delight.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="#products" class="btn btn-primary btn-lg">
+                            Explore Menu
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                        <a href="#about" class="btn btn-outline btn-lg">Our Story</a>
+                    </div>
+                    <div class="hero__stats">
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">50+</div>
+                            <div class="hero__stat-label">Unique Flavors</div>
+                        </div>
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">10K+</div>
+                            <div class="hero__stat-label">Happy Customers</div>
+                        </div>
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">4.9</div>
+                            <div class="hero__stat-label">Average Rating</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__image-wrapper fade-in">
+                    <div class="hero__image-container">
+                        <img 
+                            src="/assets/images/hero-cupcake.jpg" 
+                            alt="AJs Cakery signature strawberry cupcake with cherry" 
+                            class="hero__image"
+                            width="600"
+                            height="600"
+                            loading="eager"
+                            onerror="this.src='/assets/images/fallback.jpg'"
+                        >
+                        <div class="hero__floating hero__floating--1">
+                            <div class="hero__floating-icon">⭐</div>
+                            <div>
+                                <div class="hero__floating-text">Top Rated</div>
+                                <div class="hero__floating-sub">4.9/5 rating</div>
+                            </div>
+                        </div>
+                        <div class="hero__floating hero__floating--2">
+                            <div class="hero__floating-icon">🎁</div>
+                            <div>
+                                <div class="hero__floating-text">Gift Box</div>
+                                <div class="hero__floating-sub">Perfect for sharing</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+    TRUST MARQUEE
+    ========================================== -->
+    <div class="marquee">
+        <div class="marquee__track">
+            <div class="marquee__item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                100% Organic Ingredients
+            </div>
+            <div class="marquee__item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                Baked Fresh Daily
+            </div>
+            <div class="marquee__item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                Happiness Guaranteed
+            </div>
+            <div class="marquee__item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                Same Day Delivery
+            </div>
+            <div class="marquee__item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                Small Batch Baking
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="marquee__item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                100% Organic Ingredients
+            </div>
+            <div class="marquee__item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                Baked Fresh Daily
+            </div>
+            <div class="marquee__item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                Happiness Guaranteed
+            </div>
+            <div class="marquee__item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                Same Day Delivery
+            </div>
+            <div class="marquee__item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                Small Batch Baking
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+    PRODUCTS SECTION
+    ========================================== -->
+    <section class="section products" id="products">
+        <div class="container">
+            <div class="products__header fade-in">
+                <div>
+                    <span class="script">Our Menu</span>
+                    <h2>Signature Collection</h2>
+                    <p class="lead" style="margin:0">Discover our most loved flavors, each crafted with premium ingredients and a touch of magic.</p>
+                </div>
+                <div class="products__filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="classic">Classic</button>
+                    <button class="filter-btn" data-filter="premium">Premium</button>
+                    <button class="filter-btn" data-filter="seasonal">Seasonal</button>
+                </div>
+            </div>
+            <div class="products__grid">
+                <div class="product-card fade-in" data-category="classic">
+                    <div class="product-card__img-wrapper">
+                        <img src="/assets/images/product-strawberry.jpg" alt="AJs Cakery Strawberry Dream cupcake" class="product-card__img" width="300" height="300" loading="lazy" onerror="this.src='/assets/images/fallback.jpg'">
+                        <span class="product-card__badge">Popular</span>
+                        <button class="product-card__wishlist" aria-label="Add to wishlist">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                    </div>
+                    <div class="product-card__content">
+                        <div class="product-card__cat">Classic</div>
+                        <h3 class="product-card__name">Strawberry Dream</h3>
+                        <p class="product-card__desc">Fresh strawberry frosting with a real cherry on top.</p>
+                        <div class="product-card__rating">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            4.9 (128)
+                        </div>
+                        <div class="product-card__price">MK 4.50</div>
+                        <button class="product-card__add" data-name="Strawberry Dream" data-price="4.50" data-img="/assets/images/product-strawberry.jpg">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in" data-category="premium">
+                    <div class="product-card__img-wrapper">
+                        <img src="/assets/images/product-redvelvet.jpg" alt="AJs Cakery Red Velvet cupcake" class="product-card__img" width="300" height="300" loading="lazy" onerror="this.src='/assets/images/fallback.jpg'">
+                        <span class="product-card__badge" style="background: #8B4513;">Premium</span>
+                        <button class="product-card__wishlist" aria-label="Add to wishlist">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                    </div>
+                    <div class="product-card__content">
+                        <div class="product-card__cat">Premium</div>
+                        <h3 class="product-card__name">Red Velvet</h3>
+                        <p class="product-card__desc">Classic red velvet with cream cheese frosting & crumbs.</p>
+                        <div class="product-card__rating">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            5.0 (204)
+                        </div>
+                        <div class="product-card__price">MK 5.00</div>
+                        <button class="product-card__add" data-name="Red Velvet" data-price="5.00" data-img="/assets/images/product-redvelvet.jpg">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in" data-category="classic">
+                    <div class="product-card__img-wrapper">
+                        <img src="/assets/images/product-blueberry.jpg" alt="AJs Cakery Blueberry Vanilla cupcake" class="product-card__img" width="300" height="300" loading="lazy" onerror="this.src='/assets/images/fallback.jpg'">
+                        <button class="product-card__wishlist" aria-label="Add to wishlist">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                    </div>
+                    <div class="product-card__content">
+                        <div class="product-card__cat">Classic</div>
+                        <h3 class="product-card__name">Blueberry Vanilla</h3>
+                        <p class="product-card__desc">Creamy vanilla frosting topped with fresh blueberries.</p>
+                        <div class="product-card__rating">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            4.7 (85)
+                        </div>
+                        <div class="product-card__price">MK 4.00</div>
+                        <button class="product-card__add" data-name="Blueberry Vanilla" data-price="4.00" data-img="/assets/images/product-blueberry.jpg">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in" data-category="seasonal">
+                    <div class="product-card__img-wrapper">
+                        <img src="/assets/images/product-matcha.jpg" alt="AJs Cakery Matcha Blossom cupcake" class="product-card__img" width="300" height="300" loading="lazy" onerror="this.src='/assets/images/fallback.jpg'">
+                        <span class="product-card__badge" style="background: #4CAF50;">Seasonal</span>
+                        <button class="product-card__wishlist" aria-label="Add to wishlist">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                    </div>
+                    <div class="product-card__content">
+                        <div class="product-card__cat">Seasonal</div>
+                        <h3 class="product-card__name">Matcha Blossom</h3>
+                        <p class="product-card__desc">Japanese matcha infused sponge with sakura glaze.</p>
+                        <div class="product-card__rating">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            4.8 (64)
+                        </div>
+                        <div class="product-card__price">MK 5.50</div>
+                        <button class="product-card__add" data-name="Matcha Blossom" data-price="5.50" data-img="/assets/images/product-matcha.jpg">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center fade-in" style="margin-top: 64px;">
+                <a href="#" class="btn btn-outline btn-lg">
+                    View All Products
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+    ABOUT SECTION
+    ========================================== -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about__inner">
+                <div class="about__images fade-in">
+                    <div class="about__img-main">
+                        <img src="/assets/images/about-kitchen.jpg" alt="AJs Cakery baker in the kitchen" width="600" height="800" loading="lazy" onerror="this.src='/assets/images/fallback.jpg'">
+                    </div>
+                    <div class="about__img-sec">
+                        <img src="/assets/images/about-decorating.jpg" alt="AJs Cakery decorating a cupcake" width="400" height="300" loading="lazy" onerror="this.src='/assets/images/fallback.jpg'">
+                    </div>
+                    <div class="about__experience">
+                        <span class="about__exp-number">15</span>
+                        <span class="about__exp-text">Years of<br>Experience</span>
+                    </div>
+                </div>
+                <div class="about__content fade-in">
+                    <span class="script">Our Story</span>
+                    <h2>Baking Happiness Since 2009</h2>
+                    <p class="about__text">
+                        What started as a small kitchen experiment has blossomed into a beloved cakery in Blantyre. We believe that every cake and cupcake should be a little moment of joy — baked with the finest organic ingredients, crafted by hand, and decorated with love.
+                    </p>
+                    <p class="about__text">
+                        Our recipes have been perfected over 15 years, combining traditional techniques with creative modern flavors. From classic vanilla to exotic matcha, there's a treat for every occasion.
+                    </p>
+                    <div class="about__features">
+                        <div class="about__feat">
+                            <div class="about__feat-icon"></div>
+                            <div>
+                                <div class="about__feat-title">Organic Ingredients</div>
+                                <div class="about__feat-desc">Only the finest natural ingredients</div>
+                            </div>
+                        </div>
+                        <div class="about__feat">
+                            <div class="about__feat-icon">👩‍🍳</div>
+                            <div>
+                                <div class="about__feat-title">Handcrafted</div>
+                                <div class="about__feat-desc">Each item made by hand with care</div>
+                            </div>
+                        </div>
+                        <div class="about__feat">
+                            <div class="about__feat-icon"></div>
+                            <div>
+                                <div class="about__feat-title">Fast Delivery</div>
+                                <div class="about__feat-desc">Same-day delivery in Blantyre</div>
+                            </div>
+                        </div>
+                        <div class="about__feat">
+                            <div class="about__feat-icon"></div>
+                            <div>
+                                <div class="about__feat-title">Gift Packaging</div>
+                                <div class="about__feat-desc">Beautiful packaging for every order</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-lg">
+                        Learn More About Us
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+    FLAVORS SECTION
+    ========================================== -->
+    <section class="section flavors">
+        <div class="container text-center fade-in">
+            <span class="script">Find Your Favorite</span>
+            <h2>Delicious Flavors</h2>
+            <p class="lead">Explore our rotating menu of seasonal and classic favorites. There's a perfect cake waiting for you.</p>
+            <div class="flavor-tags">
+                <div class="tag">Red Velvet</div>
+                <div class="tag">Salted Caramel</div>
+                <div class="tag">Matcha Green Tea</div>
+                <div class="tag">Blueberry Cheesecake</div>
+                <div class="tag">Cookies & Cream</div>
+                <div class="tag">Tiramisu</div>
+                <div class="tag">Passion Fruit</div>
+                <div class="tag">Classic Vanilla</div>
+                <div class="tag">Dark Chocolate</div>
+                <div class="tag">Lemon Raspberry</div>
+                <div class="tag">Coconut Dream</div>
+                <div class="tag">Pumpkin Spice</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+    OFFER BANNER
+    ========================================== -->
+    <section class="offer">
+        <div class="container">
+            <div class="offer__card fade-in">
+                <div class="offer__content">
+                    <div class="offer__discount">20% Off</div>
+                    <h2 class="offer__title">Summer Cupcake Special</h2>
+                    <p class="offer__desc">
+                        Get 20% off our entire seasonal collection! Use code <strong style="color: var(--pink-400);">SWEET20</strong> at checkout. Limited time offer — don't miss out on these delicious flavors.
+                    </p>
+                    <div class="offer__countdown">
+                        <div class="offer__count-item">
+                            <div class="offer__count-number" id="days">02</div>
+                            <div class="offer__count-label">Days</div>
+                        </div>
+                        <div class="offer__count-item">
+                            <div class="offer__count-number" id="hours">14</div>
+                            <div class="offer__count-label">Hours</div>
+                        </div>
+                        <div class="offer__count-item">
+                            <div class="offer__count-number" id="minutes">36</div>
+                            <div class="offer__count-label">Mins</div>
+                        </div>
+                        <div class="offer__count-item">
+                            <div class="offer__count-number" id="seconds">48</div>
+                            <div class="offer__count-label">Secs</div>
+                        </div>
+                    </div>
+                    <a href="#products" class="btn btn-primary btn-lg">
+                        Shop the Sale
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+                <div class="offer__image">
+                    <img src="/assets/images/offer-assortment.jpg" alt="AJs Cakery assortment of seasonal cupcakes" width="350" height="350" loading="lazy" onerror="this.src='/assets/images/fallback.jpg'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+    TESTIMONIALS
+    ========================================== -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="text-center fade-in">
+                <span class="script">Love Notes</span>
+                <h2>What Our Customers Say</h2>
+                <p class="lead">Don't just take our word for it — hear from our happy customers right here in Blantyre.</p>
+            </div>
+            <div class="testimonials__grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-card__quote">"</div>
+                    <div class="testimonial-card__stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-card__text">The Red Velvet cupcakes are absolutely divine! I ordered a dozen for my daughter's birthday and everyone was raving about them. The cream cheese frosting is to die for.</p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">S</div>
+                        <div>
+                            <div class="testimonial-card__name">Sarah Mitchell</div>
+                            <div class="testimonial-card__role">Loyal Customer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-card__quote">"</div>
+                    <div class="testimonial-card__stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-card__text">Best cakes in town, hands down! The Chocolate Bliss is my go-to every Friday afternoon. The quality and freshness are consistently outstanding. Highly recommend!</p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">J</div>
+                        <div>
+                            <div class="testimonial-card__name">James Rodriguez</div>
+                            <div class="testimonial-card__role">Food Blogger</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-card__quote">"</div>
+                    <div class="testimonial-card__stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-card__text">We ordered custom cupcakes for our wedding and they were absolutely stunning! Not only beautiful but incredibly delicious. Our guests couldn't stop talking about them.</p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">E</div>
+                        <div>
+                            <div class="testimonial-card__name">Emily Chen</div>
+                            <div class="testimonial-card__role">Wedding Client</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+    NEWSLETTER
+    ========================================== -->
+    <div class="newsletter" id="contact">
+        <div class="container">
+            <div class="newsletter__inner fade-in">
+                <span class="script">Stay Sweet</span>
+                <h2 class="section-title">Join Our Sweet Community</h2>
+                <p class="lead">Subscribe to get exclusive offers, new flavor announcements, and baking tips delivered to your inbox.</p>
+                <form class="newsletter__form" id="newsletterForm">
+                    <input type="email" class="newsletter__input" placeholder="Enter your email address" required>
+                    <button type="submit" class="newsletter__btn">Subscribe</button>
+                </form>
+                <p class="newsletter__privacy">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+    FOOTER
+    ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div>
+                    <a href="#home" class="nav__logo">
+                        <div class="nav__logo-icon">🎂</div>
+                        AJs Cakery
+                    </a>
+                    <p class="footer__brand-desc">Baked with love in Blantyre, AJs Cakery. Handcrafted cakes and cupcakes using the finest organic ingredients, making every moment sweeter since 2009.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer__heading">Quick Links</h3>
+                    <div class="footer__links">
+                        <a href="#home" class="footer__link">Home</a>
+                        <a href="#products" class="footer__link">Menu</a>
+                        <a href="#about" class="footer__link">Our Story</a>
+                        <a href="#testimonials" class="footer__link">Reviews</a>
+                        <a href="#contact" class="footer__link">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer__heading">Categories</h3>
+                    <div class="footer__links">
+                        <a href="#" class="footer__link">Classic Cakes</a>
+                        <a href="#" class="footer__link">Premium Cupcakes</a>
+                        <a href="#" class="footer__link">Seasonal Specials</a>
+                        <a href="#" class="footer__link">Custom Orders</a>
+                        <a href="#" class="footer__link">Gift Boxes</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer__heading">Contact Us</h3>
+                    <div class="footer__links">
+                        <a href="#" class="footer__link">123 Baker Street, Blantyre</a>
+                        <a href="tel:+265888123456" class="footer__link">+265 888 123 456</a>
+                        <a href="mailto:hello@ajscakery.com" class="footer__link">hello@ajscakery.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2026 AJs Cakery. All rights reserved. Made with 🎂 and love in Blantyre.</p>
+                <div class="footer__links" style="flex-direction:row; gap:24px;">
+                    <a href="#" class="footer__link">Privacy Policy</a>
+                    <a href="#" class="footer__link">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <script src="main.js"></script>
+</body>
+</html>

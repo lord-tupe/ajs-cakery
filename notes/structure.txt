@@ -1,0 +1,29 @@
+ajscakery-site/
+├── index.html
+├── style.css
+├── main.js
+├── assets/
+│   └── images/
+│       ├── hero-cupcake.jpg
+│       ├── product-strawberry.jpg
+│       ├── product-redvelvet.jpg
+│       ├── product-blueberry.jpg
+│       ├── product-matcha.jpg
+│       ├── about-kitchen.jpg
+│       ├── about-decorating.jpg
+│       ├── offer-assortment.jpg
+│       └── fallback.jpg
+├── data/
+│   ├── settings.json
+│   ├── products/
+│   │   ├── strawberry-dream.json
+│   │   ├── red-velvet.json
+│   │   ├── blueberry-vanilla.json
+│   │   └── matcha-blossom.json
+│   └── testimonials/
+│       ├── sarah-mitchell.json
+│       ├── james-rodriguez.json
+│       └── emily-chen.json
+└── admin/
+    ├── index.html
+    └── config.yml

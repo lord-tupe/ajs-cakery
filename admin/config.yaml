@@ -1,0 +1,76 @@
+backend:
+  name: github
+  repo: your-username/ajscakery-site    # e.g., ajscakery/website
+  branch: main                          # or master
+
+media_folder: "assets/images"           # where uploaded images go
+public_folder: "/assets/images"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "data/settings.json"
+        label: "Global Settings"
+        name: "global"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Main Heading Line 1", name: "line1", widget: "string", default: "fluffy"}
+              - {label: "Main Heading Line 2", name: "line2", widget: "string", default: "cupcakes"}
+              - {label: "Badge Text", name: "badge", widget: "string", default: "Freshly baked every morning"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Stat 1 Number", name: "stat1_num", widget: "string", default: "50+"}
+              - {label: "Stat 1 Label", name: "stat1_label", widget: "string", default: "Unique Flavors"}
+              - {label: "Stat 2 Number", name: "stat2_num", widget: "string", default: "10K+"}
+              - {label: "Stat 2 Label", name: "stat2_label", widget: "string", default: "Happy Customers"}
+              - {label: "Stat 3 Number", name: "stat3_num", widget: "string", default: "4.9"}
+              - {label: "Stat 3 Label", name: "stat3_label", widget: "string", default: "Average Rating"}
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string", default: "Baking Happiness Since 2009"}
+              - {label: "Text 1", name: "text1", widget: "text"}
+              - {label: "Text 2", name: "text2", widget: "text"}
+              - {label: "Years Experience", name: "years_experience", widget: "string", default: "15"}
+          - label: "Special Offer Banner"
+            name: "offer"
+            widget: "object"
+            fields:
+              - {label: "Discount Text", name: "discount", widget: "string", default: "20% Off"}
+              - {label: "Title", name: "title", widget: "string", default: "Summer Cupcake Special"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Promo Code", name: "code", widget: "string", default: "SWEET20"}
+          - label: "Newsletter Section"
+            name: "newsletter"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string", default: "Join Our Sweet Community"}
+              - {label: "Subtitle", name: "subtitle", widget: "string"}
+
+  - name: "products"
+    label: "Products"
+    folder: "data/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Product Name", name: "name", widget: "string"}
+      - {label: "Category", name: "category", widget: "select", options: ["classic", "premium", "seasonal"]}
+      - {label: "Price (MWK)", name: "price", widget: "number", value_type: "int", min: 0}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Badge (optional)", name: "badge", widget: "string", required: false}
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "data/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Quote", name: "quote", widget: "text"}
+      - {label: "Author Name", name: "name", widget: "string"}
+      - {label: "Role", name: "role", widget: "string"}
+      - {label: "Avatar Letter", name: "avatar", widget: "string", default: "A"}
